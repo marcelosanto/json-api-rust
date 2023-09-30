@@ -1,6 +1,7 @@
 use actix_web::*;
 
 mod routes;
+use routes::catalogo::*;
 use routes::info::*;
 use routes::ping::*;
 
@@ -10,6 +11,7 @@ async fn main() -> Result<(), std::io::Error> {
         App::new()
             .route("/ping", web::get().to(ping))
             .route("/info", web::get().to(info))
+            .route("/catalogo", web::get().to(catalogo))
     });
 
     let porta = 9091;

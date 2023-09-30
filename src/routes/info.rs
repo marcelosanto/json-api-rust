@@ -6,5 +6,8 @@ const AUTHORS: &'static str = env!("CARGO_PKG_AUTHORS");
 pub async fn info() -> HttpResponse {
     HttpResponse::Ok()
         .content_type("text/html; charset=utf-8")
-        .body(format!("versao {} : \n {}", VERSION, AUTHORS))
+        .body(format!(
+            "api de teste <br> versao {} : \n {}",
+            VERSION, AUTHORS
+        ))
 }
